@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Código Python para Alunos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 800px;
+            width: 100%;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+            font-size: 24px;
+        }
+        pre {
+            background-color: #282c34;
+            color: #61dafb;
+            padding: 15px;
+            border-radius: 8px;
+            overflow: auto;
+            max-height: 300px;
+            text-align: left;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        .btn {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #61dafb;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .btn:hover {
+            background-color: #21a1f1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Código Python para Estudo Colégio Dinâmica</h1>
+        <pre id="code">
+print("Olá, Mundo!")
+produto = []
+def menuProduto():
+    while True:
+        print("Menu Produto")
+        print("1- Cadastro Produto")
+        print("2- Mostrar Produto")
+        print("3- Sair")
+        opcao = input("Escolha uma opção: ")
+        if opcao == '1':
+            CadProduto()
+        elif opcao == '2':
+            print(produto)
+        elif opcao == '3':
+            break
+        else: 
+            print("Usuário querido, não viu as opções acima!")
+def CadProduto():
+    id = int(input("Digite o ID: "))
+    nome = input("Digite o Produto: ")
+    marca = input("Digite a Marca: ")
+    modelo = input("Digite o Modelo: ")
+    custo = float(input("Digite o Custo: "))
+    produto.append([id, nome, marca, modelo, custo])
+menuProduto()
+        </pre>
+        <button class="btn" onclick="copiarCodigo()">Copiar Código</button>
+    </div>
+
+    <script>
+        function copiarCodigo() {
+            const codeElement = document.getElementById('code');
+            const range = document.createRange();
+            range.selectNode(codeElement);
+            window.getSelection().removeAllRanges(); 
+            window.getSelection().addRange(range);
+            document.execCommand('copy');
+            window.getSelection().removeAllRanges(); 
+            alert('Código copiado para a área de transferência!');
+        }
+    </script>
+</body>
+</html>
