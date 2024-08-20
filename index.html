@@ -82,6 +82,16 @@ def CadProduto():
     modelo = input("Digite o Modelo: ")
     custo = float(input("Digite o Custo: "))
     produto.append([id, nome, marca, modelo, custo])
+def mostrarProd():
+    if not produto:
+        print("Nenhum Produto cadastrado.")
+    else:
+        print("\nProdutos no Inventário:")
+        for i, prod in enumerate(produto):
+            print(f"Produto {i+1}: ID:{prod[0]} - Nome:{prod[1]}  "
+                  f"- Modelo:{prod[2]} - Marca:{prod[3]} - "
+                  f"Custo:R${prod[4]:,.2f} - Estoque:{prod[5]} - "
+                  f"Lucro:R${prod[6]:,.2f}")
 menuProduto()
         </pre>
         <button class="btn" onclick="copiarCodigo()">Copiar Código</button>
